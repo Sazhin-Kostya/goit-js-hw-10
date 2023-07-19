@@ -16,10 +16,12 @@ function fetchBreeds() {
 
 
 function fetchCatByBreed(breedId) {
+    
     return axios.get(`images/search?breed_ids=${breedId}`).then(response => {
       if (response.status !== 200) {
         throw new Error(response.status)
         }
+        
         return response.data;
         
     });

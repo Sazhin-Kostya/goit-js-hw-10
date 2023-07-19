@@ -27,7 +27,8 @@ fetchBreeds()
  .then(data => {
 selectors.select.hidden = false
 
-    data.map(breed =>
+   data.map(breed =>
+     
       selectors.select.insertAdjacentHTML(
         'beforeend',
         `<option value="${breed.id}">${breed.name}</option>`
@@ -44,9 +45,11 @@ selectors.select.hidden = false
 
 
 function changeBreed() {
+  selectors.loader.hidden = false;
     const select = selectors.select.value;
     fetchCatByBreed(select)
-        .then(data => {
+      .then(data => {
+          
             selectors.error.hidden = true;
             selectors.loader.hidden = false;
             selectors.catInfo.hidden = true;
